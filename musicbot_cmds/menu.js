@@ -34,12 +34,12 @@ const temps = moment().format('HH:mm:ss');
 const date = moment().format('DD/MM/YYYY');
 
   let infoMsg =  `
-> CHARITY MD V2 AVAILABLE MENUS* 
+> CHARITY MD V2 *AVAILABLE MENUS* 
 ╭─────────────────
 │❍╭─────────────
 │❍│▸ *MENU* 
 │❍│▸ *MENU2* 
-│❍│▸ *BUGMENU*
+│❍│▸ *https://whatsapp.com/channel/0029VakUEfb4o7qVdkwPk83E*
 │❍╰──────────────
 │❍│▸ *PLUGINS* : ${cm.length} 
 │❍│▸ *RAM* : ${format(os.totalmem() - os.freemem())}/${format(os.totalmem())}
@@ -50,7 +50,7 @@ const date = moment().format('DD/MM/YYYY');
     
 let menuMsg = `
 
- *COMMANDS*${readmore}
+ *𝙲𝙰𝚂𝙴𝚈𝚁𝙷𝙾𝙳𝙴𝚂 𝚃𝙴𝙲𝙷*${readmore}
 `;
 
     for (const cat in coms) {
@@ -63,7 +63,7 @@ let menuMsg = `
 ╰────────────···▸▸ \n`
     }
 
-    menuMsg += `https://whatsapp.com/channel/0029VakUEfb4o7qVdkwPk83E
+    menuMsg += `> 𝙼𝙰𝙳𝙴 𝙴𝙰𝚂𝚈 𝙱𝚈 𝙲𝙰𝚂𝙴𝚈𝚁𝙷𝙾𝙳𝙴𝚂🍀
 `;
 
    var lien = mybotpic();
