@@ -63,7 +63,7 @@ let menuMsg = `
 ╰────────────···▸▸ \n`
     }
 
-    menuMsg += `> MADE EASY BY CASEYRHODES 🍀
+    menuMsg += `https://whatsapp.com/channel/0029VakUEfb4o7qVdkwPk83E
 `;
 
    var lien = mybotpic();
