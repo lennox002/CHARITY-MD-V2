@@ -34,12 +34,12 @@ const temps = moment().format('HH:mm:ss');
 const date = moment().format('DD/MM/YYYY');
 
   let infoMsg =  `
-> CHARITY MD V2 *AVAILABLE MENUS* 
+> *CHARITY MD V2 AVAILABLE MENUS* 
 ╭─────────────────
 │❍╭─────────────
 │❍│▸ *MENU* 
 │❍│▸ *MENU2* 
-│❍│▸ *https://whatsapp.com/channel/0029VakUEfb4o7qVdkwPk83E*
+│❍│▸ *HACHERS HOOD*
 │❍╰──────────────
 │❍│▸ *PLUGINS* : ${cm.length} 
 │❍│▸ *RAM* : ${format(os.totalmem() - os.freemem())}/${format(os.totalmem())}
@@ -50,7 +50,7 @@ const date = moment().format('DD/MM/YYYY');
     
 let menuMsg = `
 
- *𝙲𝙰𝚂𝙴𝚈𝚁𝙷𝙾𝙳𝙴𝚂 𝚃𝙴𝙲𝙷*${readmore}
+ *𝙲𝙰𝚂𝙴𝚈𝚁𝙷𝙾𝙳𝙴𝚂 𝚃𝙴𝙲𝙷🍀*${readmore}
 `;
 
     for (const cat in coms) {
