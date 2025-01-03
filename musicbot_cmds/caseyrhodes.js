@@ -5,7 +5,7 @@ const yts = require("yt-search");
 zokou({
   'nomCom': "play",
   'categorie': "Search",
-  'reaction': '🎵'
+  'reaction': '📀'
 }, async (_0x208fbe, _0x5e783c, _0x6c2a22) => {
   const {
     ms: _0x37be60,
@@ -59,7 +59,7 @@ zokou({
 zokou({
   'nomCom': "song",
   'categorie': "Search",
-  'reaction': '🎵'
+  'reaction': '💿'
 }, async (_0x491dd9, _0x10a442, _0x5ceb5f) => {
   const {
     ms: _0x44ac2e,
