@@ -62,7 +62,7 @@ Our AI features use random APIs to run, so sometimes they may be down.
 
 ### 𝙋𝘼𝙄𝙍 𝘾𝙊𝘿𝙀 3
 <p align="center">
-<a href="https://caseypair-82ee86d1ac4f.herokuapp.com/"><img height= "30" title="Author" src="https://img.shields.io/badge/𝗦𝗘𝗦𝗦𝗜𝗢𝗡-darkblue?style=for-the-badge&logo=render"></a>
+<a href="https://caseyrhodes-f66bf49f6849.herokuapp.com/"><img height= "30" title="Author" src="https://img.shields.io/badge/𝗦𝗘𝗦𝗦𝗜𝗢𝗡-darkblue?style=for-the-badge&logo=render"></a>
 <p/>  
 
 
