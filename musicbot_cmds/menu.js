@@ -1,135 +1,209 @@
-const util = require('util');
-const fs = require('fs-extra');
-const axios = require('axios');
-const { adams } = require(__dirname  + "/../framework/zokou");
+// this is Keith shit nuhh😂😂
+//get the fuck outa here
+
+const axios = require("axios");
+const { keith } = require(__dirname + "/../framework/zokou");
 const { format } = require(__dirname + "/../framework/mesfonctions");
-const os = require("os");
+const os = require('os');
 const moment = require("moment-timezone");
-const s = require(__dirname  + "/../set");
+const settings = require(__dirname + "/../set");
 
-const more = String.fromCharCode(8206);
-const readmore = more.repeat(4001);
+const readMore = String.fromCharCode(8206).repeat(4001);
 
-const runtime = function (seconds) { 
-    seconds = Number(seconds); 
-    var d = Math.floor(seconds / (3600 * 24)); 
-    var h = Math.floor((seconds % (3600 * 24)) / 3600); 
-    var m = Math.floor((seconds % 3600) / 60); 
-    var s = Math.floor(seconds % 60); 
-    var dDisplay = d > 0 ? d + (d == 1 ? " day, " : " d, ") : ""; 
-    var hDisplay = h > 0 ? h + (h == 1 ? " hour, " : " h, ") : ""; 
-    var mDisplay = m > 0 ? m + (m == 1 ? " minute, " : " m, ") : ""; 
-    var sDisplay = s > 0 ? s + (s == 1 ? " second" : " s") : ""; 
-    return dDisplay + hDisplay + mDisplay + sDisplay; 
+// Function to convert text to fancy uppercase font
+const toFancyUppercaseFont = (text) => {
+    const fonts = {
+        'A': '𝐀', 'B': '𝐁', 'C': '𝐂', 'D': '𝐃', 'E': '𝐄', 'F': '𝐅', 'G': '𝐆', 'H': '𝐇', 'I': '𝐈', 'J': '𝐉', 'K': '𝐊', 'L': '𝐋', 'M': '𝐌',
+        'N': '𝐍', 'O': '𝐎', 'P': '𝐏', 'Q': '𝐐', 'R': '𝐑', 'S': '𝐒', 'T': '𝐓', 'U': '𝐔', 'V': '𝐕', 'W': '𝐖', 'X': '𝐗', 'Y': '𝐘', 'Z': '𝐙'
+    };
+    return text.split('').map(char => fonts[char] || char).join('');
 };
 
-// Function to fetch GitHub repo data
+// Function to convert text to fancy lowercase font
+const toFancyLowercaseFont = (text) => {
+    const fonts = {
+        'a': '𝚊', 'b': '𝚋', 'c': '𝚌', 'd': '𝚍', 'e': '𝚎', 'f': '𝚏', 'g': '𝚐', 'h': '𝚑', 'i': '𝚒', 'j': '𝚓', 'k': '𝚔', 'l': '𝚕', 'm': '𝚖', 
+        'n': '𝚗', 'o': '𝚘', 'p': '𝚙', 'q': '𝚚', 'r': '𝚛', 's': '𝚜', 't': '𝚝', 'u': '𝚞', 'v': '𝚟', 'w': '𝚠', 'x': '𝚡', 'y': '𝚢', 'z': '𝚣'
+    };
+    return text.split('').map(char => fonts[char] || char).join('');
+};
+
+// Function to format uptime
+const formatUptime = (seconds) => {
+    seconds = Number(seconds);
+    const days = Math.floor(seconds / 86400);
+    const hours = Math.floor((seconds % 86400) / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const remainingSeconds = Math.floor(seconds % 60);
+
+    return [
+        days > 0 ? `${days} ${days === 1 ? "day" : "days"}` : '',
+        hours > 0 ? `${hours} ${hours === 1 ? "hour" : "hours"}` : '',
+        minutes > 0 ? `${minutes} ${minutes === 1 ? "minute" : "minutes"}` : '',
+        remainingSeconds > 0 ? `${remainingSeconds} ${remainingSeconds === 1 ? "second" : "seconds"}` : ''
+    ].filter(Boolean).join(', ');
+};
+
+// Function to fetch GitHub stats
 const fetchGitHubStats = async () => {
     try {
-        const repo = 'caseyweb/ZHEZHO-MD'; // Replace with your repo
-        const response = await axios.get(`https://api.github.com/repos/${repo}`);
-        const forks = response.data.forks_count;
-        const stars = response.data.stargazers_count;
-        const totalUsers = (forks * 2) + (stars * 2);
-        return { forks, stars, totalUsers };
+        const response = await axios.get("https://api.github.com/repos/Keithkeizzah/ALPHA-MD1");
+        const forksCount = response.data.forks_count;
+        const starsCount = response.data.stargazers_count;
+        const totalUsers = forksCount * 2 + starsCount * 2;
+        return { forks: forksCount, stars: starsCount, totalUsers };
     } catch (error) {
         console.error("Error fetching GitHub stats:", error);
-        return { forks: 0, stars: 0, totalUsers: 0 }; 
+        return { forks: 0, stars: 0, totalUsers: 0 };
     }
 };
 
-adams({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions) => {
-    let { ms, repondre, prefixe, nomAuteurMessage } = commandeOptions;
-    let { cm } = require(__dirname  + "/../framework/zokou");
-    var coms = {};
-    var mode = s.MODE.toLowerCase() === "public" ? "public" : "private";
+// Random quotes array
+const quotes = [
+    "Dream big, work hard.",
+    "Stay humble, hustle hard.",
+    "Believe in yourself.",
+    "Success is earned, not given.",
+    "Actions speak louder than words.",
+    "The best is yet to come.",
+    "Keep pushing forward.",
+    "Do more than just exist.",
+    "Progress, not perfection.",
+    "Stay positive, work hard.",
+    "Be the change you seek.",
+    "Never stop learning.",
+    "Chase your dreams.",
+    "Be your own hero.",
+    "Life is what you make of it.",
+    "Do it with passion or not at all.",
+    "You are stronger than you think.",
+    "Create your own path.",
+    "Make today count.",
+    "Embrace the journey.",
+    "The best way out is always through.",
+    "Strive for progress, not perfection.",
+    "Don't wish for it, work for it.",
+    "Live, laugh, love.",
+    "Keep going, you're getting there.",
+    "Don’t stop until you’re proud.",
+    "Success is a journey, not a destination.",
+    "Take the risk or lose the chance.",
+    "It’s never too late.",
+    "Believe you can and you're halfway there.",
+    "Small steps lead to big changes.",
+    "Happiness depends on ourselves.",
+    "Take chances, make mistakes.",
+    "Be a voice, not an echo.",
+    "The sky is the limit.",
+    "You miss 100% of the shots you don’t take.",
+    "Start where you are, use what you have.",
+    "The future belongs to those who believe.",
+    "Don’t count the days, make the days count.",
+    "Success is not the key to happiness. Happiness is the key to success."
+];
 
-    cm.map((com) => {
-        const categoryUpper = com.categorie.toUpperCase();
-        if (!coms[categoryUpper]) coms[categoryUpper] = [];
-        coms[categoryUpper].push(com.nomCom);
+// Function to get a random quote
+const getRandomQuote = () => {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    return quotes[randomIndex];
+};
+
+// Keith command handler for 'menu' command
+keith({ nomCom: "menu", aliases: ["liste", "helplist", "commandlist"], categorie: "SYSTEM" }, async (message, client, config) => {
+    const { ms, respond, prefix, nomAuteurMessage } = config;
+    const commands = require(__dirname + "/../framework/zokou").cm;
+    const categorizedCommands = {};
+    const mode = settings.MODE.toLowerCase() !== "public" ? "Private" : "Public";
+
+    // Organize commands into categories
+    commands.forEach(command => {
+        const category = command.categorie.toUpperCase();
+        if (!categorizedCommands[category]) {
+            categorizedCommands[category] = [];
+        }
+        categorizedCommands[category].push(command.nomCom);
     });
 
-    moment.tz.setDefault(`${s.TZ}`);
-    const temps = moment().format('HH:mm:ss');
-    const date = moment().format('DD/MM/YYYY');
-    const hour = moment().hour();
+    // Get current time and format it
+    moment.tz.setDefault("Africa/Nairobi");
+    const currentTime = moment();
+    const formattedTime = currentTime.format("HH:mm:ss");
+    const formattedDate = currentTime.format("DD/MM/YYYY");
+    const currentHour = currentTime.hour();
 
-    let greeting = "Good night";
-    if (hour >= 0 && hour <= 11) greeting = "Good morning";
-    else if (hour >= 12 && hour <= 16) greeting = "Good afternoon";
-    else if (hour >= 16 && hour <= 21) greeting = "Good evening";
+    const greetings = ["Good Morning 🌄", "Good Afternoon 🌃", "Good Evening ⛅", "Good Night 🌙"];
+    const greeting = currentHour < 12 ? greetings[0] : currentHour < 17 ? greetings[1] : currentHour < 21 ? greetings[2] : greetings[3];
 
+    // Fetch GitHub stats
     const { totalUsers } = await fetchGitHubStats();
     const formattedTotalUsers = totalUsers.toLocaleString();
 
-    let infoMsg = `
-╭─────═━┈┈━═──━┈⊷
-┇ ʙᴏᴛ ɴᴀᴍᴇ: *ʙᴍᴡ ᴍᴅ*
-┇ ᴍᴏᴅᴇ: *${mode}*
-┇ ᴘʀᴇғɪx: *[ ${prefixe} ]*
-┇ ᴘʟᴀᴛғᴏʀᴍ: *${os.platform()}*
-┇ ᴛʏᴘᴇ: *ᴠ6x*
-┇ ᴅᴀᴛᴇ: *${date}*
-┇ ᴛɪᴍᴇ: *${temps}*
-┇ ᴄᴀᴘᴀᴄɪᴛʏ ${format(os.totalmem() - os.freemem())}/${format(os.totalmem())}
-╰─────═━┈┈━═──━┈⊷\n\n
-🌍 𝐁𝐄𝐒𝐓 𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 𝐁𝐎𝐓 🌍\n\n`;
+    // Get random quote
+    const randomQuote = getRandomQuote();
 
-    let menuMsg = `${readmore}  
-╭─────═━┈┈━═──━┈⊷
-┇ ʙᴍᴡ ᴍᴅ ᴄᴏᴍᴍᴀɴᴅ ʟɪsᴛ
-╰─────═━┈┈━═──━┈⊷\n\n`;
+    // Prepare response message
+    let responseMessage = `
+ ${greeting}, *${nomAuteurMessage || "User"}*
 
-    const sortedCategories = Object.keys(coms).sort();
-    sortedCategories.forEach((cat) => {
-        menuMsg += `*╭────❒* *${cat}* *❒*`;
-        coms[cat].forEach((cmd) => {
-            menuMsg += `\n*╏* ${cmd}`;
-        });
-        menuMsg += `\n*╰─═════════════❒*\n`;
-    });
+*Be motivated with this inspiration quote🫧*   
+"💎${randomQuote}💎"
 
-    menuMsg += `
-▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
-©CASEYRHODES PROJECT 
-▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄`;
+╭━━━ 〔 𝐀𝐋𝐏𝐇𝐀-𝐌𝐃 〕━━━┈⊷
+┃✵╭───────────────
+┃✵│▸ *ʙᴏᴛ ᴏᴡɴᴇʀ:* ${settings.OWNER_NAME}
+┃✵│▸ *ᴘʀᴇғɪx:* *[ ${settings.PREFIXE} ]*
+┃✵│▸ *ᴛɪᴍᴇ:* ${formattedTime}
+┃✵│▸ *ᴄᴏᴍᴍᴀɴᴅꜱ:* ${commands.length}
+┃✵│▸ *ᴅᴀᴛᴇ:* ${formattedDate}
+┃✵│▸ *ᴍᴏᴅᴇ:* ${mode}
+┃✵│▸ *ᴛɪᴍᴇ ᴢᴏɴᴇ:* Africa/Nairobi
+┃✵│▸ *ᴛᴏᴛᴀʟ ᴜsᴇʀs:* ${formattedTotalUsers} users
+┃✵│▸ *ʀᴀᴍ:* ${format(os.totalmem() - os.freemem())}/${format(os.totalmem())}
+┃✵│▸ *ᴜᴘᴛɪᴍᴇ:* ${formatUptime(process.uptime())}
+┃✵╰───────────────
+╰━━━━━━━━━━━━━━━┈⊷
+━━━━━━━━━━━━━━━━
+🎇 *QUOTE* 🎆
+"${randomQuote}"
+━━━━━━━━━━━━━━━━
+> 𝐏𝐎𝐖𝐄𝐑𝐄𝐃 𝐁𝐘 𝐊𝐄𝐈𝐓𝐇
+`;
 
+    // List commands
+    let commandsList = "*𝐀𝐕𝐀𝐈𝐋𝐀𝐁𝐋𝐄 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒*\n";
+    const sortedCategories = Object.keys(categorizedCommands).sort();
+    let commandIndex = 1;
+
+    for (const category of sortedCategories) {
+        commandsList += `\n*╭─────「 ${toFancyUppercaseFont(category)} 」──┈⊷*\n│◦➛╭───────────────`;
+        const sortedCommands = categorizedCommands[category].sort();
+        for (const command of sortedCommands) {
+            commandsList += `\n│◦➛ ${commandIndex++}. ${toFancyLowercaseFont(command)}`;
+        }
+        commandsList += "\n│◦➛╰─────────────\n╰──────────────┈⊷\n";
+    }
+
+    commandsList += readMore + "\nin honor of Alpha\n";
+
+    // Send message
     try {
-        await zk.sendMessage(dest, { 
-            text: infoMsg + menuMsg,
+        const senderName = message.sender || message.from;
+        await client.sendMessage(message, {
+            text: responseMessage + commandsList,
             contextInfo: {
-                mentionedJid: [nomAuteurMessage],
+                mentionedJid: [senderName],
                 externalAdReply: {
-                    body: "© Caseyrhodes",
-                    thumbnailUrl: "https://files.catbox.moe/ytix9f.jpeg",
-                    sourceUrl: 'https://whatsapp.com/channel/0029VakUEfb4o7qVdkwPk83E',
+                    title: "🌟𝗔𝗟𝗣𝗛𝗔-𝗠𝗗✨",
+                    body: "POWERED BY KEITH",
+                    thumbnailUrl: "https://files.catbox.moe/09c9r1.jpg",
+                    sourceUrl: "https://whatsapp.com/channel/0029Vaan9TF9Bb62l8wpoD47",
                     mediaType: 1,
-                   renderLargerThumbnail: true
+                    renderLargerThumbnail: true
                 }
             }
         });
-
-        // Send audio with caption
-        await zk.sendMessage(dest, { 
-            audio: { 
-                url: "https://files.catbox.moe/oordg5.mp3" // Replace with your audio URL
-            }, 
-            mimetype: 'audio/mp4', 
-            ptt: false, // Set to true if you want it as a voice note
-            caption: "BMW MD SONG",
-            contextInfo: {
-                externalAdReply: {
-                    body: "BMW SONG BY IBRAHIM",
-                    thumbnailUrl: "https://files.catbox.moe/va22vq.jpeg",
-                    sourceUrl: 'https://whatsapp.com/channel/0029VakUEfb4o7qVdkwPk83E',
-                    rendersmallThumbnail: false
-                }
-            }
-        });
-
-    } catch (e) {
-        console.log("🥵🥵 Menu erreur " + e);
-        repondre("🥵🥵 Menu erreur " + e);
+    } catch (error) {
+        console.error("Menu error: ", error);
+        respond("🥵🥵 Menu error: " + error);
     }
 });
