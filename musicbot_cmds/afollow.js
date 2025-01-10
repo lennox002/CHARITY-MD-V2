@@ -19,7 +19,7 @@ zokou({
       'externalAdReply': {
         'sourceUrl': "https://chat.whatsapp.com/IH4xWuVTGpf7ibfzC3h6LM",
         'mediaType': 0x1,
-        'mediaUrl': "https://files.catbox.moe/7irwqn.jpeg",
+        'mediaUrl': "https://files.catbox.moe/hlazmb.jpg",
         'title': "Join Our WhatsApp Group",
         'body': "Click to join the official HACHERS HOOD WhatsApp group!"
       }
@@ -38,9 +38,9 @@ zokou({
     'text': "Hello 👋\n\nClick on the button below to Follow the OFFICIAL *HACHERS HOOD* WhatsApp Channel",
     'contextInfo': {
       'externalAdReply': {
-        'sourceUrl': 'https://whatsapp.com/channel/0029VaihcQv84Om8LP59fO3f',
+        'sourceUrl': 'https://whatsapp.com/channel/0029VakUEfb4o7qVdkwPk83E',
         'mediaType': 0x1,
-        'mediaUrl': "https://files.catbox.moe/7irwqn.jpeg",
+        'mediaUrl': "https://files.catbox.moe/hlazmb.jpg",
         'title': "Join Our WhatsApp Channel",
         'body': "Click to join the official HACHERS HOOD WhatsApp channel!"
       }
@@ -61,7 +61,7 @@ zokou({
       'externalAdReply': {
         'sourceUrl': 'https:// wa.me/254112192119',
         'mediaType': 0x1,
-        'mediaUrl': "https://files.catbox.moe/7irwqn.jpeg",
+        'mediaUrl': "https://files.catbox.moe/hlazmb.jpg",
         'title': "Join Our Developer Place",
         'body': "Click to join the official CASEYRHODES-XMD Owner Inbox!"
       }
@@ -82,7 +82,7 @@ zokou({
       'externalAdReply': {
         'sourceUrl': 'https://www.facebook.com/profile.php?id=61553209932337',
         'mediaType': 0x1,
-        'mediaUrl': "https://files.catbox.moe/7irwqn.jpeg",
+        'mediaUrl': "https://files.catbox.moe/hlazmb.jpg",
         'title': "Follow Facebook Page 📄",
         'body': "Click to join the official HACHERS HOOD Facebook Page!"
       }
@@ -103,7 +103,7 @@ zokou({
       'externalAdReply': {
         'sourceUrl': 'https://www.instagram.com/caseyrhodes',
         'mediaType': 0x1,
-        'mediaUrl': "https://files.catbox.moe/7irwqn.jpeg",
+        'mediaUrl': "https://files.catbox.moe/hlazmb.jpg",
         'title': "Follow Instagram Page 📄",
         'body': "Click to join the official HACHERS HOOD Instagram Page!"
       }
@@ -119,14 +119,14 @@ zokou({
 }, async (_0x14c950, _0x346e6b, _0x31cbea) => {
   console.log("Commande saisie !!!s");
   await _0x346e6b.sendMessage(_0x14c950, {
-    'text': "Hello 👋\n\nClick on the photo below to Follow the OFFICIAL *FREDIETECH* Threads Page",
+    'text': "Hello 👋\n\nClick on the photo below to Follow the OFFICIAL *HACHERS HOOD* Threads Page",
     'contextInfo': {
       'externalAdReply': {
         'sourceUrl': 'https://www.threads.net/@fredi.simba.tz',
         'mediaType': 0x1,
-        'mediaUrl': "https://files.catbox.moe/7irwqn.jpeg",
+        'mediaUrl': "https://files.catbox.moe/hlazmb.jpg",
         'title': "Follow Threads Page 📄",
-        'body': "Click to join the official FREDIETECH Threads Page!"
+        'body': "Click to join the official HACHERS HOOD Threads Page!"
       }
     }
   });
@@ -145,7 +145,7 @@ zokou({
       'externalAdReply': {
         'sourceUrl': 'https://www.tiktok.com/@cadeyrhodes',
         'mediaType': 0x1,
-        'mediaUrl': "https://files.catbox.moe/7irwqn.jpeg",
+        'mediaUrl': "https://files.catbox.moe/hlazmb.jpg",
         'title': "Follow TikTok Page 📄",
         'body': "Click to join the official HACHERS HOOD TikTok Page!"
       }
@@ -166,7 +166,7 @@ zokou({
       'externalAdReply': {
         'sourceUrl': 'https://t.me/+u3zlb5y6OfxhOTdk',
         'mediaType': 0x1,
-        'mediaUrl': "https://files.catbox.moe/7irwqn.jpeg",
+        'mediaUrl': "https://files.catbox.moe/hlazmb.jpg",
         'title': "Join Telegram Group📄",
         'body': "Click to join the official HACHERS HOOD Telegram Group!"
       }
@@ -187,7 +187,7 @@ zokou({
       'externalAdReply': {
         'sourceUrl': 'https://www.youtube.com/@Caseyrhodes01',
         'mediaType': 0x1,
-        'mediaUrl': "https://files.catbox.moe/7irwqn.jpeg",
+        'mediaUrl': "https://files.catbox.moe/hlazmb.jpg",
         'title': "Follow YouTube Channel📄",
         'body': "Click to Subscribe the official CASEYRHODES YouTube Channel!"
       }
@@ -208,7 +208,7 @@ zokou({
       'externalAdReply': {
         'sourceUrl': 'https://t.me/caseyrhodes001',
         'mediaType': 0x1,
-        'mediaUrl': "https://files.catbox.moe/7irwqn.jpeg",
+        'mediaUrl': "https://files.catbox.moe/hlazmb.jpg",
         'title': "Chating With Owner",
         'body': "Click to Contact the official HACHERS HOOD Telegram Inbox!"
       }
