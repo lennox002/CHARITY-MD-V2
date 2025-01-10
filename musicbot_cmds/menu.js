@@ -7,7 +7,7 @@ const moment = require("moment-timezone");
 const s = require(__dirname + "/../set");
 const more = String.fromCharCode(8206)
 const readmore = more.repeat(4001)
-zokou({ nomCom: "menu", categorie: "Menu" }, async (dest, zk, commandeOptions) => {
+zokou({ nomCom: "menu1", categorie: "Menu" }, async (dest, zk, commandeOptions) => {
     let { ms, repondre ,prefixe,nomAuteurMessage,mybotpic} = commandeOptions;
     let { cm } = require(__dirname + "/../framework//zokou");
     var coms = {};
@@ -38,7 +38,7 @@ const date = moment().format('DD/MM/YYYY');
 ┃❍⁠⁠⁠⁠│◆ 𝚃𝚑𝚎𝚖𝚎 : CASEYRHODES 🍀 
 ┃❍⁠⁠⁠⁠└▰▱▰▱▰▱▰▱➻
 ╰▱▰▱▰▱▰⊷▱▰▱▰▱❍⁠⁠⁠⁠\n${readmore}`;
-    let menuMsg = `𝙻𝚞𝚌𝚔𝚢 𝙼𝚍 𝙲𝚖𝚍`;
+    let menuMsg = `CHARITY-XMD`;
     for (const cat in coms) {
         menuMsg += `
 ╭▱▱▱❍⁠⁠⁠⁠ *${cat}* ❍⁠⁠⁠⁠▰▰▰⊷ 
