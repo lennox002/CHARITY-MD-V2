@@ -30,7 +30,7 @@ zokou({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions
     const date = moment().format('DD/MM/YYYY');
 
     let infoMsg = `
-╭━═「 *${s.BOT}* 」═━❍⁠⁠⁠⁠
+╭━═ *${s.BOT}* ═━❍⁠⁠⁠⁠
 ┃❍⁠⁠⁠⁠╭────••••────➻
 ┃❍⁠⁠⁠⁠│◆ 𝙾𝚠𝚗𝚎𝚛 : ${s.OWNER_NAME}
 ┃❍⁠⁠⁠⁠│◆ 𝙿𝚛𝚎𝚏𝚒𝚡 : [ ${s.PREFIXE} ]
@@ -40,7 +40,7 @@ zokou({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions
 ┃❍⁠⁠⁠⁠│◆ 𝙿𝚕𝚊𝚝𝚏𝚘𝚛𝚖 : ${os.platform()}
 ┃❍⁠⁠⁠⁠│◆ 𝙲𝚛𝚎𝚊𝚝𝚘𝚛 : CASEYRHODES TECH
 ┃❍⁠⁠⁠⁠│◆ 𝙲𝚘𝚖𝚖𝚊𝚗𝚍𝚜 : ${cm.length}
-┃❍⁠⁠⁠⁠│◆ 𝚃𝚑𝚎𝚖𝚎 : 𝐂𝐀𝐒𝐄𝐘𝐑𝐇𝐎𝐃𝐄𝐒💖
+┃❍⁠⁠⁠⁠│◆ 𝚃𝚑𝚎𝚖𝚎 : 𝐂𝐀𝐒𝐄𝐘𝐑𝐇𝐎𝐃𝐄𝐒 💖
 ┃❍⁠⁠⁠⁠└────••••────➻
 ╰─━━━━══──══━━━❍⁠⁠⁠⁠\n${readmore}
 `;
@@ -51,10 +51,10 @@ zokou({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions
         menuMsg += `
 ❍⁠⁠⁠⁠━━〔 *${cat}* 〕━━❍⁠⁠⁠⁠
 ╭━━══••══━━••⊷
-║💖┊ `;
+║🍀┊ `;
         for (const cmd of coms[cat]) {
             menuMsg += `          
-║💖┊ ${s.PREFIXE}  *${cmd}*`;    
+║🍀┊ ${s.PREFIXE}  *${cmd}*`;    
         }
         menuMsg += `
 ║💖┊
