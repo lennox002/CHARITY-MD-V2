@@ -1,4 +1,4 @@
-const util = require('util');
+.enc const util = require('util');
 const fs = require('fs-extra');
 const { zokou } = require(__dirname + "/../framework/zokou");
 const { format } = require(__dirname + "/../framework/mesfonctions");
@@ -17,18 +17,18 @@ zokou({ nomCom: "repo", categorie: "General" }, async (dest, zk, commandeOptions
     let infoMsg = `
 *AVAILABLE REPO AND GROUPS* 
 *hellow Friend👋👋*
-this is* *CHARITY-XMD👊.*
+this is* *CASEYRHODES-XMD👊.*
 
-🗼 *REPOSITORY:* https://github.com/caseyweb/CHARITY-MD-V2
+🗼 *REPOSITORY:* https://github.com/caseyweb/NHEZHO
 💫 *STARS:* 20
 🧧 *FORKS:* 63
 📅 *RELEASE DATE:* 08/01/2025
 🕐 *UPDATE ON:* 2025-01-13T21:36:23Z
 🙊 *OWNER:* *Mr Caseyrhodes*
-🍃 *THEME:* *CHARITY-XMD*
+🍃 *THEME:* *CASEYRHODES-XMD*
 🍷 *Am Safe To Fight In My Life*
 ╭─────────────────
-│❍│▸ *REPO* : https://github.com/caseyweb/CHARITY-MD-V2
+│❍│▸ *REPO* : https://github.com/caseyweb/NHEZHO
 │❍│▸ *YTUBE* : https://www.youtube.com/@Caseyrhodes01
 ╰──────────────────
     `;
@@ -44,11 +44,12 @@ this is* *CHARITY-XMD👊.*
             contextInfo: {
                 mentionedJid: [nomAuteurMessage],
                 externalAdReply: {
-                    title: "𝐂𝐇𝐀𝐑𝐈𝐓𝐘 𝐗𝐌𝐃 WHATSAPP BOT",
+                    title: "𝐂𝐀𝐒𝐄𝐘𝐑𝐇𝐎𝐃𝐄𝐒 𝐗𝐌𝐃 WHATSAPP BOT",
                     body: "MADE BY 𝗖𝗔𝗦𝗘𝗬𝗥𝗛𝗢𝗗𝗘𝗦",
                     thumbnailUrl: "https://files.catbox.moe/81hhl0.jpg", // Static bot image URL
                     sourceUrl: "https://whatsapp.com/channel/0029VakUEfb4o7qVdkwPk83E",
-                    mediaType: 1
+                    mediaType: 1,
+                    renderLargerThumbnail: true
                 }
             }
         }, { quoted: ms });
